@@ -19,7 +19,19 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 # 9100 is prometheus-node-exporter, 9101 is the default APTOS metrics port
 ```
 
-Have ideas/changes/additions? Great! Feel free to push a PR to this repo or reach out to [me on Discord](https://discord.gg/SGhQzj5tyz)!
+## To use this file
+
+- Download the `.json` file from the Grafana folder in this repository
+- Hit Import in Grafana
+
+![](https://grabup.teamhim.com/unalimentative-winterage-lucently-pharyngotonsillitis.png?raw=true)
+
+- Click Upload JSON and select the file downloaded
+- Select your Prometheus datasource from the dropdown & import!
+
+![](https://grabup.teamhim.com/neurocity-thumbkins-hooping-arabs.png?raw-true)
+
+#### Have ideas/changes/additions? Great! Feel free to push a PR to this repo or reach out to [me on Discord](https://discord.gg/SGhQzj5tyz)!
 
 ## Who is RHINO?
 
