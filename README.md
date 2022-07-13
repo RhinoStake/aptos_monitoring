@@ -33,7 +33,7 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 
 ![](https://grabup.teamhim.com/neurocity-thumbkins-hooping-arabs.png?raw-true)
 
-#### Have ideas/changes/additions? Great! Feel free to push a PR to this repo or reach out to [me on Discord](https://discord.gg/SGhQzj5tyz)!
+### Have ideas/changes/additions? Great! Feel free to push a PR to this repo or reach out to [me on Discord](https://discord.gg/SGhQzj5tyz)!
 
 ## Who is RHINO?
 
