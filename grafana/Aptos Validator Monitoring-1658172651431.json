@@ -9,7 +9,7 @@
       "pluginName": "Prometheus"
     }
   ],
-  "__elements": [],
+  "__elements": {},
   "__requires": [
     {
       "type": "panel",
@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.0.2"
+      "version": "9.0.3"
     },
     {
       "type": "panel",
@@ -95,7 +95,7 @@
   "gnetId": 11074,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1657727268847,
+  "iteration": 1658166565708,
   "links": [
     {
       "$$hashKey": "object:2302",
@@ -175,7 +175,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -239,7 +239,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -304,7 +304,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -409,7 +409,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -474,7 +474,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -521,73 +521,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 15,
-        "y": 1
-      },
-      "id": 308,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.0.2",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "expr": "sum by (instance) (irate(aptos_storage_api_latency_seconds_count{job=~\"${job}\",chain=~\"${chain}\",result=\"Ok\"}[1m])) / sum by (instance) (irate(aptos_storage_api_latency_seconds_count{job=~\"${job}\",chain=~\"${chain}\"}[1m]))",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "AptosDB Success Rate",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
               }
             ]
           },
@@ -598,7 +531,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 18,
+        "x": 15,
         "y": 1
       },
       "id": 203,
@@ -617,7 +550,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -675,7 +608,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 21,
+        "x": 18,
         "y": 1
       },
       "id": 207,
@@ -694,7 +627,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -712,6 +645,73 @@
         }
       ],
       "title": "Failed/Retried Txn %",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 21,
+        "y": 1
+      },
+      "id": 308,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (instance) (irate(aptos_storage_api_latency_seconds_count{job=~\"${job}\",chain=~\"${chain}\",result=\"Ok\"}[1m])) / sum by (instance) (irate(aptos_storage_api_latency_seconds_count{job=~\"${job}\",chain=~\"${chain}\"}[1m]))",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "AptosDB Success Rate",
       "type": "stat"
     },
     {
@@ -923,7 +923,7 @@
           }
         ]
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -1433,7 +1433,7 @@
           "color": {
             "mode": "thresholds"
           },
-          "decimals": 1,
+          "decimals": 2,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1469,7 +1469,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -1516,9 +1516,9 @@
           "custom": {
             "axisLabel": "",
             "axisPlacement": "auto",
-            "barAlignment": 0,
+            "barAlignment": -1,
             "drawStyle": "line",
-            "fillOpacity": 12,
+            "fillOpacity": 48,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -1559,9 +1559,42 @@
               }
             ]
           },
-          "unit": "s"
+          "unit": "percentunit"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Round"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 9
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 0
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "hidden"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 7,
@@ -1576,14 +1609,14 @@
           "calcs": [
             "min",
             "max",
-            "mean"
+            "lastNotNull"
           ],
           "displayMode": "table",
           "placement": "bottom"
         },
         "tooltip": {
-          "mode": "single",
-          "sort": "none"
+          "mode": "multi",
+          "sort": "desc"
         }
       },
       "pluginVersion": "8.3.0",
@@ -1593,16 +1626,44 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "1 / rate(aptos_consensus_committed_blocks_count{job=\"${job}\",chain=~\"${chain}\"}[5m])",
+          "expr": "sum(aptos_failed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\"}) / (sum(aptos_committed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\"})+sum(aptos_failed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\"})) ",
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "Block Time - {{instance}}",
+          "legendFormat": "Total Failed Proposal %",
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(aptos_failed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\",address=~\"${nodeID}\"}) / (sum(aptos_committed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\",address=~\"${nodeID}\"}) + sum(aptos_failed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\",address=~\"${nodeID}\"}))",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "${nodeID} Failed Proposal %",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "aptos_consensus_current_round{job=~\"${job}\",chain=~\"${chain}\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Round",
+          "range": true,
+          "refId": "B"
         }
       ],
-      "title": "Block Time",
+      "title": "Failed Proposals",
       "type": "timeseries"
     },
     {
@@ -1610,6 +1671,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1695,23 +1757,112 @@
           "legendFormat": "Rounds/sec",
           "range": true,
           "refId": "A"
+        }
+      ],
+      "title": "Consensus Rounds / second",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 12,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 8
+              },
+              {
+                "color": "red",
+                "value": 15
+              }
+            ]
+          },
+          "unit": "s"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 21
+      },
+      "id": 317,
+      "interval": "30s",
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.3.0",
+      "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(aptos_consensus_last_committed_round{job=~\"${job}\",chain=~\"${chain}\"}[1m])",
+          "expr": "1 / rate(aptos_consensus_committed_blocks_count{job=\"${job}\",chain=~\"${chain}\"}[5m])",
           "hide": false,
+          "instant": false,
           "interval": "",
-          "legendFormat": "Blocks/sec",
-          "range": true,
-          "refId": "B"
+          "legendFormat": "Block Time - {{instance}}",
+          "refId": "A"
         }
       ],
-      "title": "Consensus Rounds & Blocks /s",
+      "title": "Block Time",
       "type": "timeseries"
     },
     {
@@ -1771,7 +1922,7 @@
         "h": 7,
         "w": 10,
         "x": 12,
-        "y": 21
+        "y": 28
       },
       "id": 219,
       "options": {
@@ -1835,7 +1986,7 @@
         "h": 7,
         "w": 2,
         "x": 22,
-        "y": 21
+        "y": 28
       },
       "id": 293,
       "options": {
@@ -1852,7 +2003,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -1869,63 +2020,6 @@
       ],
       "title": "1h Txns",
       "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 28
-      },
-      "id": 225,
-      "options": {
-        "content": "<p style=\"text-align:center;\">To be added</p>",
-        "mode": "html"
-      },
-      "pluginVersion": "9.0.2",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "exemplar": true,
-          "expr": "tendermint_consensus_validators_power{chain=\"${chain}\",instance=~\"$instance:.+6660\"}",
-          "interval": "",
-          "legendFormat": "Active",
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "exemplar": true,
-          "expr": "tendermint_consensus_missing_validators_power{chain=\"${chain}\",instance=~\"$instance:.+6660\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Missing",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "exemplar": true,
-          "expr": "tendermint_consensus_byzantine_validators_power{chain=\"${chain}\",instance=~\"$instance:.+6660\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Byzantine",
-          "refId": "C"
-        }
-      ],
-      "title": "Voting Power",
-      "type": "text"
     },
     {
       "datasource": {
@@ -2027,6 +2121,198 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": -1,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 8
+              },
+              {
+                "color": "red",
+                "value": 15
+              }
+            ]
+          },
+          "unit": "locale"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Round"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 9
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 0
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "hidden"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Total"
+            },
+            "properties": [
+              {
+                "id": "custom.stacking",
+                "value": {
+                  "group": "A",
+                  "mode": "none"
+                }
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 7
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 35
+      },
+      "id": 318,
+      "interval": "30s",
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "hidden",
+          "placement": "bottom",
+          "sortBy": "Max",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "8.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(aptos_failed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Total",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "aptos_consensus_current_round{job=~\"${job}\",chain=~\"${chain}\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Round",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "aptos_failed_proposals_in_window{job=\"${job}\",chain=~\"${chain}\"}",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{address}}",
+          "refId": "C"
+        }
+      ],
+      "title": "Failed Proposals by Address",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "Size of a core mempool index",
       "fieldConfig": {
         "defaults": {
@@ -2096,7 +2382,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 45
       },
       "id": 306,
       "options": {
@@ -2160,7 +2446,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 52
       },
       "id": 284,
       "options": {
@@ -2178,7 +2464,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2230,7 +2516,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 52
       },
       "id": 316,
       "options": {
@@ -2248,7 +2534,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2281,7 +2567,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 58
       },
       "id": 229,
       "panels": [],
@@ -2298,14 +2584,14 @@
         "h": 2,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 59
       },
       "id": 277,
       "options": {
         "content": "# ${hostname} (${instance})",
         "mode": "markdown"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "transparent": true,
       "type": "text"
     },
@@ -2335,7 +2621,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2355,7 +2642,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 51
+        "y": 61
       },
       "id": 255,
       "links": [],
@@ -2371,7 +2658,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2417,7 +2704,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2437,7 +2725,7 @@
         "h": 4,
         "w": 2,
         "x": 3,
-        "y": 51
+        "y": 61
       },
       "id": 257,
       "links": [],
@@ -2453,7 +2741,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2500,7 +2788,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2520,7 +2809,7 @@
         "h": 4,
         "w": 2,
         "x": 5,
-        "y": 51
+        "y": 61
       },
       "id": 259,
       "links": [],
@@ -2536,7 +2825,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2582,7 +2871,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2602,7 +2892,7 @@
         "h": 4,
         "w": 2,
         "x": 7,
-        "y": 51
+        "y": 61
       },
       "id": 263,
       "links": [],
@@ -2618,7 +2908,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2656,7 +2946,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2676,7 +2967,7 @@
         "h": 4,
         "w": 3,
         "x": 9,
-        "y": 51
+        "y": 61
       },
       "hideTimeOverride": false,
       "id": 261,
@@ -2693,7 +2984,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2755,7 +3046,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2775,7 +3067,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 51
+        "y": 61
       },
       "id": 275,
       "links": [],
@@ -2791,7 +3083,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2837,7 +3129,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2857,7 +3150,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 51
+        "y": 61
       },
       "id": 279,
       "links": [],
@@ -2873,7 +3166,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -2919,7 +3212,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2935,7 +3229,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 51
+        "y": 61
       },
       "id": 265,
       "links": [],
@@ -2954,7 +3248,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -3000,7 +3294,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3016,7 +3311,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 51
+        "y": 61
       },
       "id": 271,
       "links": [],
@@ -3035,7 +3330,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -3081,7 +3376,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3097,7 +3393,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 51
+        "y": 61
       },
       "id": 273,
       "links": [],
@@ -3116,7 +3412,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -3162,7 +3458,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -3182,7 +3479,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 53
+        "y": 63
       },
       "id": 267,
       "links": [],
@@ -3201,7 +3498,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -3249,7 +3546,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -3269,7 +3567,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 53
+        "y": 63
       },
       "id": 311,
       "links": [],
@@ -3288,7 +3586,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -3338,7 +3636,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3354,7 +3653,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 53
+        "y": 63
       },
       "hideTimeOverride": true,
       "id": 269,
@@ -3374,7 +3673,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -3431,7 +3730,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 55
+        "y": 65
       },
       "hiddenSeries": false,
       "id": 243,
@@ -3456,7 +3755,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3654,7 +3953,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 55
+        "y": 65
       },
       "hiddenSeries": false,
       "id": 241,
@@ -3679,7 +3978,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3849,7 +4148,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 64
+        "y": 74
       },
       "height": "300",
       "hiddenSeries": false,
@@ -3878,7 +4177,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3999,7 +4298,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 64
+        "y": 74
       },
       "height": "300",
       "hiddenSeries": false,
@@ -4026,7 +4325,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4127,7 +4426,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 64
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 239,
@@ -4154,7 +4453,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4235,6 +4534,123 @@
     },
     {
       "aliasColors": {
+        "Idle - Waiting for something to happen": "#052B51",
+        "guest": "#9AC48A",
+        "idle": "#052B51",
+        "iowait": "#EAB839",
+        "irq": "#BF1B00",
+        "nice": "#C15C17",
+        "sdb_每秒I/O操作%": "#d683ce",
+        "softirq": "#E24D42",
+        "steal": "#FCE2DE",
+        "system": "#508642",
+        "user": "#5195CE",
+        "磁盘花费在I/O操作占比": "#ba43a9"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "The time spent on I/O in the natural time of each second.（wall-clock time）",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 82
+      },
+      "hiddenSeries": false,
+      "id": 247,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxPerRow": 6,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.0.3",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "rate(node_disk_io_time_seconds_total{instance=~\"$instance:.*\"}[$interval])",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{device}}_ IO time",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Time Spent Doing I/Os",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:3796",
+          "format": "percentunit",
+          "label": "",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:3797",
+          "format": "short",
+          "logBase": 1,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {
         "vda_write": "#6ED0E0"
       },
       "bars": false,
@@ -4257,8 +4673,8 @@
       "gridPos": {
         "h": 9,
         "w": 8,
-        "x": 0,
-        "y": 72
+        "x": 8,
+        "y": 82
       },
       "height": "300",
       "hiddenSeries": false,
@@ -4285,7 +4701,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4380,123 +4796,6 @@
     },
     {
       "aliasColors": {
-        "Idle - Waiting for something to happen": "#052B51",
-        "guest": "#9AC48A",
-        "idle": "#052B51",
-        "iowait": "#EAB839",
-        "irq": "#BF1B00",
-        "nice": "#C15C17",
-        "sdb_每秒I/O操作%": "#d683ce",
-        "softirq": "#E24D42",
-        "steal": "#FCE2DE",
-        "system": "#508642",
-        "user": "#5195CE",
-        "磁盘花费在I/O操作占比": "#ba43a9"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "The time spent on I/O in the natural time of each second.（wall-clock time）",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 8,
-        "y": 72
-      },
-      "hiddenSeries": false,
-      "id": 247,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "maxPerRow": 6,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.0.2",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "exemplar": true,
-          "expr": "rate(node_disk_io_time_seconds_total{instance=~\"$instance:.*\"}[$interval])",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{device}}_ IO time",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Time Spent Doing I/Os",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:3796",
-          "format": "percentunit",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:3797",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {
         "vda": "#6ED0E0"
       },
       "bars": false,
@@ -4520,7 +4819,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 72
+        "y": 82
       },
       "height": "300",
       "hiddenSeries": false,
@@ -4548,7 +4847,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4681,7 +4980,7 @@
         "h": 9,
         "w": 10,
         "x": 0,
-        "y": 81
+        "y": 91
       },
       "height": "300",
       "hiddenSeries": false,
@@ -4709,7 +5008,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -4802,7 +5101,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -4814,7 +5114,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 81
+        "y": 91
       },
       "id": 282,
       "options": {
@@ -4831,7 +5131,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -4888,7 +5188,7 @@
         "h": 9,
         "w": 11,
         "x": 13,
-        "y": 81
+        "y": 91
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -4912,7 +5212,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "pointradius": 1,
       "points": false,
       "renderer": "flot",
@@ -5028,7 +5328,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -5040,7 +5341,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 84
+        "y": 94
       },
       "id": 283,
       "options": {
@@ -5057,7 +5358,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -5102,7 +5403,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -5114,7 +5416,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 87
+        "y": 97
       },
       "id": 281,
       "options": {
@@ -5131,7 +5433,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.2",
+      "pluginVersion": "9.0.3",
       "targets": [
         {
           "datasource": {
@@ -5318,11 +5620,34 @@
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "definition": "label_values(aptos_connections{direction=\"inbound\"},peer_id)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "nodeID",
+        "multi": false,
+        "name": "nodeID",
+        "options": [],
+        "query": {
+          "query": "label_values(aptos_connections{direction=\"inbound\"},peer_id)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -5350,6 +5675,6 @@
   "timezone": "browser",
   "title": "Aptos Validator Monitoring",
   "uid": "bz8kPr673",
-  "version": 8,
+  "version": 27,
   "weekStart": ""
 }
