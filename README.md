@@ -2,7 +2,7 @@
 
 This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Setting up Prometheus/Grafana is outside the scope of this repo. Use the [excellent guide from Artifact Staking](https://artifact-staking.medium.com/setting-up-validator-monitoring-for-aptos-testnet-2-85d5c4e94c80).
 
-![](https://grabup.teamhim.com/consequents-freckled-apprehensiveness-puncturing.png?raw=true)
+![](https://grabup.teamhim.com/archive-storekeepers-jollies-ironstones.png?raw=true)
 
 ## A few assumptions notes about using this dashboard:
 
