@@ -864,7 +864,7 @@
         },
         "overrides": []
       },
-      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 9 },
+      "gridPos": { "h": 7, "w": 6, "x": 0, "y": 9 },
       "id": 213,
       "options": {
         "legend": {
@@ -934,7 +934,7 @@
         },
         "overrides": []
       },
-      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 9 },
+      "gridPos": { "h": 7, "w": 6, "x": 6, "y": 9 },
       "id": 320,
       "options": {
         "legend": {
@@ -1242,7 +1242,7 @@
         },
         "overrides": []
       },
-      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 15 },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
       "id": 217,
       "options": {
         "legend": {
@@ -4037,6 +4037,6 @@
   "timezone": "browser",
   "title": "Aptos Validator Monitoring",
   "uid": "bz8kPr673",
-  "version": 39,
+  "version": 40,
   "weekStart": ""
 }
