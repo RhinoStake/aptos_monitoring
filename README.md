@@ -4,7 +4,7 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 
 This Dashboard is also available on the [Grafana Dashboard page for one-click install](https://grafana.com/grafana/dashboards/16846-aptos-validator-monitoring/).
 
-![](https://grabup.teamhim.com/trichostrongylus-metopoceros-intergraft-umbrosity.png?raw=true)
+![](https://grabup.teamhim.com/beshadow-molluscousness-electrolyzable-queue.png?raw=true)
 
 ## A few assumptions notes about using this dashboard:
 
