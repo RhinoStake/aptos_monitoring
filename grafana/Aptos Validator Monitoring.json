@@ -1,4 +1,65 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.1.4"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -43,7 +104,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 11074,
   "graphTooltip": 1,
-  "id": 59,
+  "id": null,
   "links": [
     {
       "$$hashKey": "object:2302",
@@ -79,7 +140,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Version reported by nodes",
       "fieldConfig": {
@@ -126,7 +187,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -143,7 +204,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Epoch reported by nodes",
       "fieldConfig": {
@@ -190,7 +251,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -207,7 +268,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Consensus Data reported by nodes",
       "fieldConfig": {
@@ -255,7 +316,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -268,7 +329,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "aptos_consensus_current_round{job=~\"${job}\",chain=~\"${chain}\"}",
@@ -285,7 +346,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -333,7 +394,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "aptos_consensus_current_epoch_validators{job=~\"${job}\",chain=~\"${chain}\"}",
@@ -358,7 +419,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -405,7 +466,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "aptos_consensus_committed_txns_count{job=~\"${job}\",chain=~\"${chain}\",state=\"success\"}",
@@ -420,7 +481,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Transactions per second (5m average)",
       "fieldConfig": {
@@ -468,7 +529,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -486,7 +547,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -547,7 +608,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -565,7 +626,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Proposals per minute over the last 5 minutes",
       "fieldConfig": {
@@ -620,7 +681,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -637,7 +698,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Proposals sent by validator",
       "fieldConfig": {
@@ -684,7 +745,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -697,7 +758,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -711,7 +772,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -725,7 +786,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -743,7 +804,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Failures per minute over the last 5 minutes",
       "fieldConfig": {
@@ -798,7 +859,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -815,7 +876,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Failed proposals in window from validator over period",
       "fieldConfig": {
@@ -870,7 +931,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -884,7 +945,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -898,7 +959,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -912,7 +973,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -930,7 +991,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Peer connections",
       "fieldConfig": {
@@ -981,7 +1042,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -994,7 +1055,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1012,7 +1073,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Captures if the full node is connected.  Network ID in config file must be `vfn`.",
       "fieldConfig": {
@@ -1074,7 +1135,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1091,7 +1152,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1141,7 +1202,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (instance) (irate(aptos_storage_api_latency_seconds_count{job=~\"${job}\",chain=~\"${chain}\",result=\"Ok\"}[1m])) / sum by (instance) (irate(aptos_storage_api_latency_seconds_count{job=~\"${job}\",chain=~\"${chain}\"}[1m]))",
@@ -1156,7 +1217,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1365,7 +1426,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "node_uname_info{job=~\"$job\",chain=~\"$chain\"} - 0",
@@ -1378,7 +1439,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "sum(time() - node_boot_time_seconds{job=~\"$job\",chain=~\"$chain\"}) by (instance)",
@@ -1392,7 +1453,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "node_memory_MemTotal_bytes{job=~\"$job\",chain=~\"$chain\"} - 0",
@@ -1406,7 +1467,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "count(node_cpu_seconds_total{job=~\"$job\",chain=~\"$chain\"}) by (instance) /8",
@@ -1420,7 +1481,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1435,7 +1496,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1450,7 +1511,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1465,7 +1526,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "max(rate(node_disk_read_bytes_total{job=~\"$job\",chain=~\"$chain\"}[$__interval])) by (instance)",
@@ -1479,7 +1540,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1494,7 +1555,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1509,7 +1570,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "max(rate(node_disk_written_bytes_total{job=~\"$job\",chain=~\"$chain\"}[$__interval])) by (instance)",
@@ -1523,7 +1584,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "max(rate(node_network_receive_bytes_total{job=~\"$job\",chain=~\"$chain\"}[$__interval])*8) by (instance)",
@@ -1537,7 +1598,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "max(rate(node_network_transmit_bytes_total{job=~\"$job\",chain=~\"$chain\"}[$__interval])*8) by (instance)",
@@ -1670,7 +1731,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1773,7 +1834,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1786,7 +1847,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1819,7 +1880,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1922,7 +1983,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1935,7 +1996,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1968,7 +2029,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2122,7 +2183,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2135,7 +2196,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2149,7 +2210,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2163,7 +2224,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "(increase(aptos_consensus_proposals_count{job=~\"${job}\",chain=~\"${chain}\",instance=~\"${instance}.*\"}[45s]))",
@@ -2180,7 +2241,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2298,7 +2359,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2312,7 +2373,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2326,7 +2387,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2344,7 +2405,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Failed proposals in window, network wide vs. this validator",
       "fieldConfig": {
@@ -2520,7 +2581,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2534,7 +2595,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2548,7 +2609,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2562,7 +2623,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "aptos_consensus_current_round{job=~\"${job}\",chain=~\"${chain}\"}",
@@ -2579,7 +2640,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2659,7 +2720,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2677,7 +2738,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2755,7 +2816,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2772,7 +2833,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2962,7 +3023,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2976,7 +3037,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "aptos_consensus_current_round{job=~\"${job}\",chain=~\"${chain}\"}",
@@ -2989,7 +3050,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3003,7 +3064,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3021,7 +3082,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -3131,7 +3192,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3144,7 +3205,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3158,7 +3219,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3176,7 +3237,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -3223,7 +3284,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3236,7 +3297,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3250,7 +3311,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3264,7 +3325,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3282,7 +3343,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Size of a core mempool index",
       "fieldConfig": {
@@ -3374,7 +3435,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "aptos_core_mempool_index_size{job=~\"${job}\",instance=~\"${instance}.*\",chain=~\"${chain}\"}",
@@ -3390,7 +3451,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "The total time spent in seconds of commiting blocks in Aptos executor ",
       "fieldConfig": {
@@ -3437,7 +3498,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3458,7 +3519,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "The total time spent in seconds of block execution in the block executor.",
       "fieldConfig": {
@@ -3505,7 +3566,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3564,7 +3625,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Busy state of all CPU cores together",
       "fieldConfig": {
@@ -3627,7 +3688,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "(((count(count(node_cpu_seconds_total{instance=~\"$instance:.*\",job=\"$job\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$instance:.*\",job=\"$job\"}[5m])))) * 100) / count(count(node_cpu_seconds_total{job=\"$job\"}) by (cpu))",
@@ -3645,7 +3706,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Busy state of all CPU cores together (5 min average)",
       "fieldConfig": {
@@ -3708,7 +3769,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "avg(node_load5{instance=~\"$instance:.*\",job=\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$instance:.*\",job=\"$job\"}) by (cpu)) * 100",
@@ -3727,7 +3788,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Busy state of all CPU cores together (15 min average)",
       "fieldConfig": {
@@ -3790,7 +3851,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "avg(node_load15{instance=~\"$instance:.*\",job=\"$job\"}) / count(count(node_cpu_seconds_total{instance=~\"$instance:.*\",job=\"$job\"}) by (cpu)) * 100",
@@ -3808,7 +3869,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Used Swap",
       "fieldConfig": {
@@ -3871,7 +3932,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "((node_memory_SwapTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$instance:.*\",job=\"$job\"}) / (node_memory_SwapTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"} )) * 100",
@@ -3888,7 +3949,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Non available RAM memory",
       "fieldConfig": {
@@ -3945,7 +4006,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "((node_memory_MemTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"} - node_memory_MemFree_bytes{instance=~\"$instance:.*\",job=\"$job\"}) / (node_memory_MemTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"} )) * 100",
@@ -3960,7 +4021,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "100 - ((node_memory_MemAvailable_bytes{instance=~\"$instance:.*\",job=\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"})",
@@ -3979,7 +4040,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Used Root FS",
       "fieldConfig": {
@@ -4042,7 +4103,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$instance:.*\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=~\"$instance:.*\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
@@ -4060,7 +4121,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Used Root FS",
       "fieldConfig": {
@@ -4123,7 +4184,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$instance:.*\",job=\"$job\",mountpoint=\"/home\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=~\"$instance:.*\",job=\"$job\",mountpoint=\"/home\",fstype!=\"rootfs\"})",
@@ -4141,7 +4202,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total number of CPU cores",
       "fieldConfig": {
@@ -4203,7 +4264,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "count(count(node_cpu_seconds_total{instance=~\"$instance:.*\",job=\"$job\"}) by (cpu))",
@@ -4220,7 +4281,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total RAM",
       "fieldConfig": {
@@ -4283,7 +4344,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_memory_MemTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"}",
@@ -4300,7 +4361,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total SWAP",
       "fieldConfig": {
@@ -4363,7 +4424,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_memory_SwapTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"}",
@@ -4380,7 +4441,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total RootFS",
       "fieldConfig": {
@@ -4447,7 +4508,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_filesystem_size_bytes{instance=~\"$instance:.*\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
@@ -4466,7 +4527,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Total RootFS",
       "fieldConfig": {
@@ -4533,7 +4594,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4554,7 +4615,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "System uptime",
       "fieldConfig": {
@@ -4618,7 +4679,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_time_seconds{instance=~\"$instance:.*\",job=\"$job\"} - node_boot_time_seconds{instance=~\"$instance:.*\",job=\"$job\"}",
@@ -4635,7 +4696,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Basic CPU info",
       "fieldConfig": {
@@ -4795,7 +4856,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=\"system\",instance=~\"$instance:.*\",job=\"$job\"}[5m])) * 100",
@@ -4810,7 +4871,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4827,7 +4888,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=\"iowait\",instance=~\"$instance:.*\",job=\"$job\"}[5m])) * 100",
@@ -4842,7 +4903,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4858,7 +4919,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4875,7 +4936,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4895,7 +4956,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Basic memory usage",
       "fieldConfig": {
@@ -5051,7 +5112,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5068,7 +5129,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5085,7 +5146,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_memory_Cached_bytes{instance=~\"$instance:.*\",job=\"$job\"} + node_memory_Buffers_bytes{instance=~\"$instance:.*\",job=\"$job\"}",
@@ -5099,7 +5160,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_memory_MemFree_bytes{instance=~\"$instance:.*\",job=\"$job\"}",
@@ -5113,7 +5174,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "(node_memory_SwapTotal_bytes{instance=~\"$instance:.*\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$instance:.*\",job=\"$job\"})",
@@ -5131,7 +5192,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -5237,7 +5298,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_load1{instance=~\"$instance:.*\"}",
@@ -5254,7 +5315,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_load5{instance=~\"$instance:.*\"}",
@@ -5269,7 +5330,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_load15{instance=~\"$instance:.*\"}",
@@ -5288,7 +5349,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "The number of kibibytes read and written to the device  per second",
       "fieldConfig": {
@@ -5383,7 +5444,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5399,7 +5460,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5420,7 +5481,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "The number of kibibytes read and written to the device  per second",
       "fieldConfig": {
@@ -5515,7 +5576,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5531,7 +5592,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5552,7 +5613,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "The percent of CPU time during which I/O requests were issued to the device",
       "fieldConfig": {
@@ -5815,7 +5876,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5834,7 +5895,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Time spent on each read/write operation (ignores individual \"md\" devices)",
       "fieldConfig": {
@@ -5930,7 +5991,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5946,7 +6007,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5962,7 +6023,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5979,7 +6040,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -5999,7 +6060,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -6083,7 +6144,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "(node_filesystem_size_bytes{instance=~\"$instance:.*\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{instance=~\"$instance:.*\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}) *100/(node_filesystem_avail_bytes {instance=~\"$instance:.*\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}+(node_filesystem_size_bytes{instance=~\"$instance:.*\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{instance=~\"$instance:.*\",fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}))",
@@ -6097,7 +6158,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "node_filesystem_files_free{instance=~\"$instance:.*\",fstype=~\"ext.?|xfs\"} / node_filesystem_files{instance=~\"$instance:.*\",fstype=~\"ext.?|xfs\"}",
@@ -6113,7 +6174,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -6207,7 +6268,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "rate(node_network_receive_bytes_total{instance=~\"$instance:.*\"}[$interval])*8",
@@ -6221,7 +6282,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "rate(node_network_transmit_bytes_total{instance=~\"$instance:.*\"}[$interval])*8",
@@ -6239,7 +6300,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -6285,7 +6346,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(node_network_receive_bytes_total{instance=~\"$instance:.*\"}[24h]))",
@@ -6296,7 +6357,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(node_network_transmit_bytes_total{instance=~\"$instance:.*\"}[24h]))",
@@ -6312,7 +6373,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -6442,7 +6503,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -6457,7 +6518,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -6475,7 +6536,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -6521,7 +6582,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(node_network_receive_bytes_total{instance=~\"$instance:.*\"}[7d]))",
@@ -6532,7 +6593,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(node_network_transmit_bytes_total{instance=~\"$instance:.*\"}[7d]))",
@@ -6548,7 +6609,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "VZT5-Dv7z"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -6594,7 +6655,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(node_network_receive_bytes_total{instance=~\"$instance:.*\"}[31d]))",
@@ -6605,7 +6666,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "VZT5-Dv7z"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(node_network_transmit_bytes_total{instance=~\"$instance:.*\"}[31d]))",
@@ -6626,14 +6687,10 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": false,
-          "text": "aptos",
-          "value": "aptos"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "VZT5-Dv7z"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{},job)",
         "hide": 0,
@@ -6656,14 +6713,10 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": false,
-          "text": "llt",
-          "value": "llt"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "VZT5-Dv7z"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{job=~\"$job\"}, chain)",
         "hide": 0,
@@ -6682,14 +6735,10 @@
         "type": "query"
       },
       {
-        "current": {
-          "selected": false,
-          "text": "hetz-node-08",
-          "value": "hetz-node-08"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "VZT5-Dv7z"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{job=~\"$job\",instance=~\"$instance:9100\"}, nodename)",
         "hide": 2,
@@ -6712,14 +6761,10 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": false,
-          "text": "llt.aptos.rhinostake.com",
-          "value": "llt.aptos.rhinostake.com"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "VZT5-Dv7z"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(up{chain=~\"$chain\"}, instance)",
         "description": "",
@@ -6794,14 +6839,10 @@
         "type": "interval"
       },
       {
-        "current": {
-          "selected": false,
-          "text": "17e6eeec",
-          "value": "17e6eeec"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "VZT5-Dv7z"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(aptos_connections{direction=\"inbound\"},peer_id)",
         "hide": 2,
