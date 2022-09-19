@@ -4,7 +4,7 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 
 **New!** This Dashboard is also available on the [Grafana Dashboard page for one-click install](https://grafana.com/grafana/dashboards/16846-aptos-validator-monitoring/).
 
-![](https://grabup.teamhim.com/beshadow-molluscousness-electrolyzable-queue.png?raw=true)
+![](https://grabup.teamhim.com/bisectrix-bemusk-felspars-narcosis.png?raw=true)
 
 ## A few assumptions notes about using this dashboard:
 
@@ -16,9 +16,12 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 ```yaml
   - job_name: aptos
       static_configs:
-      - targets: ['val.ip.addy.here:9100','val.ip.addy.here:9101','valFullNode.ip.addy.here:9100','valFullNode.ip.addy.here:9101']
+      - targets: ['val.ait3.ip.addy.here:9100','val.ait3.ip.addy.here:9101','valFullNode.ait3.ip.addy.here:9100','valFullNode.ait3.ip.addy.here:9101']
           labels:
           chain: 'ait3'
+      - targets: ['val.testnet.ip.addy.here:9100','val.testnet.ip.addy.here:9101','valFullNode.testnet.ip.addy.here:9100','valFullNode.testnet.ip.addy.here:9101']
+          labels:
+          chain: 'testnet'
 
 # 9100 is prometheus-node-exporter, 9101 is the default APTOS metrics port.  Ensure these are available from the prometheus server
 # Add both your Validator and Validator Full Node IP addresses.  No need for additional tags.
