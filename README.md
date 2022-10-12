@@ -4,12 +4,14 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 
 **New!** This Dashboard is also available on the [Grafana Dashboard page for one-click install](https://grafana.com/grafana/dashboards/16846-aptos-validator-monitoring/).
 
-![aptos monitoring dashboard](https://grabup.teamhim.com/uninflicted-prey-mulctative-uncorner.png?raw=true)
+![aptos monitoring dashboard](https://grabup.teamhim.com/massages-multidigitate-auride-irksome.png?raw=true)
 
 ## A few assumptions notes about using this dashboard
 
 - This is in-progress and will have significant updates in 2022 as I (and other operators) better understand the important metrics and alerts for proper node operations.
 - Come back often, re-download the json and re-import the dashboard json for updates.
+- This requires a Prometheus data source.
+- This also requires the [Infinity Plugin](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) (for pulling API/JSON information). Install this plugin by executing `grafana-cli plugins install yesoreyeram-infinity-datasource` on the grafana server.
 - Ensure that node-exporter is installed on your Validator to pull machine metrics: `apt install prometheus-node-exporter`.
 - This dashboard assumes you have a `chain` tag that is used in the prometheus metrics capture. I use this to flip between testnet/mainnet monitoring. This dashboard assumes you have this `chain` label set and will not show data without it. Setup your `prometheus.yml` file like this:
 
@@ -43,10 +45,10 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 - Click Upload JSON and select the file downloaded
 - Select your Prometheus datasource from the dropdown & import!
 
-![grafana import](https://grabup.teamhim.com/neurocity-thumbkins-hooping-arabs.png?raw-true)
+![grafana import](https://grabup.teamhim.com/tabescence-jamshid-tiou-stinkier.png?raw-true)
 
 Have ideas/changes/additions? Great! Feel free to push a PR to this repo or reach out to [me on Discord](https://discord.gg/SGhQzj5tyz)!
 
 ## Who is RHINO?
 
-RHINO is a professionally managed, highly available validator service. Earn rewards and help secure networks by staking your tokens with RHINO. We operate across the Cosmos, Helium and APTOS ecosystems. Read more at [https://rhinostake.com](https://rhinostake.com).
+RHINO is a professionally managed, highly available validator service. Earn rewards and help secure networks by staking your tokens with RHINO. We operate across the Aptos, Cosmos, Chainlink, and Helium ecosystems. Read more at [https://rhinostake.com](https://rhinostake.com).
