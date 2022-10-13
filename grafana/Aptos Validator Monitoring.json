@@ -2312,17 +2312,33 @@
           }
         }
       ],
-      "title": "Current Epoch Started At",
+      "title": "Epoch Ends At",
       "transformations": [
         {
           "id": "calculateField",
           "options": {
-            "alias": "time",
+            "alias": "convertMilliseconds",
             "binary": {
               "left": "result",
               "operator": "/",
               "reducer": "sum",
               "right": "1000"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "addEpochLength",
+            "binary": {
+              "left": "convertMilliseconds",
+              "reducer": "sum",
+              "right": "7200000"
             },
             "mode": "binary",
             "reduce": {
@@ -2603,7 +2619,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(aptos_consensus_proposals_count{job=~\"${job}\",chain=~\"${chain}\",instance=~\"${instance}.*\"}[15m]) * 60",
+          "expr": "rate(aptos_consensus_proposals_count{job=~\"${job}\",chain=~\"${chain}\",instance=~\"${instance}.*\"}[5m]) * 60",
           "interval": "",
           "legendFormat": "__auto",
           "range": true,
@@ -4740,7 +4756,7 @@
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "semi-dark-blue",
+                  "fixedColor": "blue",
                   "mode": "fixed"
                 }
               }
@@ -4755,7 +4771,7 @@
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "purple",
+                  "fixedColor": "green",
                   "mode": "fixed"
                 }
               }
@@ -5179,6 +5195,100 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "A stacked chart of time spent in each part of the \"production pipeline\"",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 50
+      },
+      "id": 334,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "rate(consensus_duration_sum{job=~\"${job}\",chain=~\"${chain}\"}[1m])",
+          "legendFormat": "{{op}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Consensus Time Distribution",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "Size of a core mempool index",
       "fieldConfig": {
         "defaults": {
@@ -5250,7 +5360,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 61
       },
       "id": 306,
       "options": {
@@ -5311,7 +5421,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 57
+        "y": 68
       },
       "id": 284,
       "options": {
@@ -5379,7 +5489,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 57
+        "y": 68
       },
       "id": 316,
       "options": {
@@ -5428,7 +5538,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 63
+        "y": 74
       },
       "id": 229,
       "panels": [],
@@ -5445,7 +5555,7 @@
         "h": 2,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 75
       },
       "id": 277,
       "options": {
@@ -5503,7 +5613,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 66
+        "y": 77
       },
       "id": 255,
       "links": [],
@@ -5584,7 +5694,7 @@
         "h": 4,
         "w": 2,
         "x": 3,
-        "y": 66
+        "y": 77
       },
       "id": 257,
       "links": [],
@@ -5666,7 +5776,7 @@
         "h": 4,
         "w": 2,
         "x": 5,
-        "y": 66
+        "y": 77
       },
       "id": 259,
       "links": [],
@@ -5747,7 +5857,7 @@
         "h": 4,
         "w": 2,
         "x": 7,
-        "y": 66
+        "y": 77
       },
       "id": 263,
       "links": [],
@@ -5820,7 +5930,7 @@
         "h": 4,
         "w": 3,
         "x": 9,
-        "y": 66
+        "y": 77
       },
       "hideTimeOverride": false,
       "id": 261,
@@ -5918,7 +6028,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 66
+        "y": 77
       },
       "id": 275,
       "links": [],
@@ -5999,7 +6109,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 66
+        "y": 77
       },
       "id": 279,
       "links": [],
@@ -6076,7 +6186,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 66
+        "y": 77
       },
       "id": 265,
       "links": [],
@@ -6156,7 +6266,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 66
+        "y": 77
       },
       "id": 271,
       "links": [],
@@ -6236,7 +6346,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 66
+        "y": 77
       },
       "id": 273,
       "links": [],
@@ -6320,7 +6430,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 68
+        "y": 79
       },
       "id": 267,
       "links": [],
@@ -6406,7 +6516,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 68
+        "y": 79
       },
       "id": 311,
       "links": [],
@@ -6490,7 +6600,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 68
+        "y": 79
       },
       "hideTimeOverride": true,
       "id": 269,
@@ -6532,7 +6642,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 70
+        "y": 81
       },
       "id": 243,
       "libraryPanel": {
@@ -6545,7 +6655,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 70
+        "y": 81
       },
       "id": 241,
       "libraryPanel": {
@@ -6558,7 +6668,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 79
+        "y": 90
       },
       "id": 235,
       "libraryPanel": {
@@ -6571,7 +6681,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 79
+        "y": 90
       },
       "id": 237,
       "libraryPanel": {
@@ -6584,7 +6694,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 79
+        "y": 90
       },
       "id": 329,
       "libraryPanel": {
@@ -6597,7 +6707,7 @@
         "h": 9,
         "w": 10,
         "x": 0,
-        "y": 87
+        "y": 98
       },
       "id": 247,
       "libraryPanel": {
@@ -6610,7 +6720,7 @@
         "h": 9,
         "w": 10,
         "x": 10,
-        "y": 87
+        "y": 98
       },
       "id": 249,
       "libraryPanel": {
@@ -6623,7 +6733,7 @@
         "h": 9,
         "w": 4,
         "x": 20,
-        "y": 87
+        "y": 98
       },
       "id": 239,
       "libraryPanel": {
@@ -6636,7 +6746,7 @@
         "h": 9,
         "w": 10,
         "x": 0,
-        "y": 96
+        "y": 107
       },
       "id": 251,
       "libraryPanel": {
@@ -6649,7 +6759,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 96
+        "y": 107
       },
       "id": 282,
       "libraryPanel": {
@@ -6662,7 +6772,7 @@
         "h": 9,
         "w": 11,
         "x": 13,
-        "y": 96
+        "y": 107
       },
       "id": 253,
       "libraryPanel": {
@@ -6699,7 +6809,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 99
+        "y": 110
       },
       "id": 283,
       "options": {
@@ -6772,7 +6882,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 102
+        "y": 113
       },
       "id": 281,
       "options": {
@@ -7004,7 +7114,7 @@
           "type": "yesoreyeram-infinity-datasource",
           "uid": "${DS_INFINITY}"
         },
-        "definition": "Infinity- (legacy) CollectionLookup(mainnet,premainnet.aptosdev.com,llt,testnet.aptoslabs.com,$chain)",
+        "definition": "Infinity- (legacy) CollectionLookup(mainnet,mainnet.aptoslabs.com,llt,testnet.aptoslabs.com,$chain)",
         "hide": 2,
         "includeAll": false,
         "multi": false,
@@ -7025,7 +7135,7 @@
               "method": "GET"
             }
           },
-          "query": "CollectionLookup(mainnet,premainnet.aptosdev.com,llt,testnet.aptoslabs.com,$chain)",
+          "query": "CollectionLookup(mainnet,mainnet.aptoslabs.com,llt,testnet.aptoslabs.com,$chain)",
           "queryType": "legacy"
         },
         "refresh": 1,
@@ -7049,6 +7159,6 @@
   "timezone": "browser",
   "title": "Aptos Validator Monitoring",
   "uid": "bz8kPr673",
-  "version": 144,
+  "version": 154,
   "weekStart": ""
 }
