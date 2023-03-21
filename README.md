@@ -4,7 +4,7 @@ This is a work-in-progress Grafana dashboard for monitoring Aptos Validators. Se
 
 **New!** This Dashboard is also available on the [Grafana Dashboard page for one-click install](https://grafana.com/grafana/dashboards/16846-aptos-validator-monitoring/).
 
-![aptos monitoring dashboard](https://grabup.teamhim.com/septogerm-oreodontoid-stegocephalia-unpathologically.png?raw=true)
+![aptos monitoring dashboard](https://grabup.teamhim.com/hibachis-venipuncture-unnorthern-assuring.png?raw=true)
 
 ## A few assumptions and instructions for setup:
 
