@@ -6305,6 +6305,167 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "5m"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "15m"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 90
+      },
+      "id": 235,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["min", "max", "mean", "lastNotNull"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.1.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "node_load1{instance=~\"$instance:.*\",chain=~\"$chain\"}",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "1m",
+          "metric": "",
+          "refId": "A",
+          "step": 20,
+          "target": ""
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "node_load5{instance=~\"$instance:.*\",chain=~\"$chain\"}",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "5m",
+          "refId": "B",
+          "step": 20
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "node_load15{instance=~\"$instance:.*\",chain=~\"$chain\"}",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "15m",
+          "refId": "C",
+          "step": 20
+        }
+      ],
+      "title": "System Load",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "Basic CPU info",
       "fieldConfig": {
         "defaults": {
@@ -6439,8 +6600,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 0,
+        "w": 8,
+        "x": 8,
         "y": 90
       },
       "id": 243,
@@ -6697,8 +6858,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 8,
+        "x": 16,
         "y": 90
       },
       "id": 241,
@@ -6809,168 +6970,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 33,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "5m"
-            },
-            "properties": [
-              {
-                "id": "custom.fillOpacity",
-                "value": 0
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "15m"
-            },
-            "properties": [
-              {
-                "id": "custom.fillOpacity",
-                "value": 0
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 99
-      },
-      "id": 235,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": ["min", "max", "mean", "lastNotNull"],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "9.1.2",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "node_load1{instance=~\"$instance:.*\",chain=~\"$chain\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "1m",
-          "metric": "",
-          "refId": "A",
-          "step": 20,
-          "target": ""
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "node_load5{instance=~\"$instance:.*\",chain=~\"$chain\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "5m",
-          "refId": "B",
-          "step": 20
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "node_load15{instance=~\"$instance:.*\",chain=~\"$chain\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "15m",
-          "refId": "C",
-          "step": 20
-        }
-      ],
-      "title": "System Load",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "The number of kibibytes read and written to the device  per second",
+      "description": "Amount of data read and written to the device per second",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -7040,8 +7040,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 8,
+        "w": 12,
+        "x": 0,
         "y": 99
       },
       "id": 237,
@@ -7069,7 +7069,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(node_disk_read_bytes_total{device!~\"md.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
+          "expr": "rate(node_disk_read_bytes_total{device!~\"md.*|dm.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -7085,7 +7085,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(node_disk_written_bytes_total{device!~\"md.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
+          "expr": "rate(node_disk_written_bytes_total{device!~\"md.*|dm.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -7096,7 +7096,7 @@
           "step": 10
         }
       ],
-      "title": "Disk R/W (kb/sec by device)",
+      "title": "Disk R/W Speeds /sec (raw devices)",
       "type": "timeseries"
     },
     {
@@ -7104,7 +7104,141 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "The number of kibibytes read and written to the device  per second",
+      "description": "Time spent on each read/write operation",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Time read (-) / write (+)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/.*Read$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 99
+      },
+      "id": 249,
+      "interval": "1m",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["min", "max", "mean", "lastNotNull"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.1.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(node_disk_read_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*|dm.*\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*|dm.*\"}[$__rate_interval])",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{device}} Read Latency",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(node_disk_write_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*|dm.*\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*|dm.*\"}[$__rate_interval])",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{device}} Write Latency",
+          "refId": "C"
+        }
+      ],
+      "title": "Disk Latencies (raw devices)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "The number of read/write requests sent to the raw drives",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -7174,9 +7308,9 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 99
+        "w": 12,
+        "x": 0,
+        "y": 107
       },
       "id": 329,
       "links": [],
@@ -7185,7 +7319,9 @@
           "calcs": ["min", "max", "mean", "lastNotNull"],
           "displayMode": "table",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": true
         },
         "tooltip": {
           "mode": "multi",
@@ -7201,7 +7337,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(node_disk_reads_completed_total{device!~\"md.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
+          "expr": "rate(node_disk_reads_completed_total{device!~\"md.*|dm.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -7217,7 +7353,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(node_disk_writes_completed_total{device!~\"md.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
+          "expr": "rate(node_disk_writes_completed_total{device!~\"md.*|dm.*\",chain=~\"$chain\",instance=~\"$instance:.*\"}[$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -7228,7 +7364,7 @@
           "step": 10
         }
       ],
-      "title": "Disk R/W (Requests/sec by device)",
+      "title": "Disk Requests /sec (raw devices)",
       "type": "timeseries"
     },
     {
@@ -7473,9 +7609,9 @@
         ]
       },
       "gridPos": {
-        "h": 9,
-        "w": 10,
-        "x": 0,
+        "h": 8,
+        "w": 8,
+        "x": 12,
         "y": 107
       },
       "id": 247,
@@ -7483,143 +7619,6 @@
       "options": {
         "legend": {
           "calcs": ["max", "mean", "lastNotNull"],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "9.1.2",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "rate(node_disk_io_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval])",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{device}}_ IO time",
-          "range": true,
-          "refId": "C"
-        }
-      ],
-      "title": "Disk CPU Utilization (%)",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "Time spent on each read/write operation (ignores individual \"md\" devices)",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "Time read (-) / write (+)",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 33,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "s"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": "/.*Read Latency$/"
-            },
-            "properties": [
-              {
-                "id": "custom.transform",
-                "value": "negative-Y"
-              }
-            ]
-          },
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": ["nvme1n1 IO Time"],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 10,
-        "x": 10,
-        "y": 107
-      },
-      "id": 249,
-      "interval": "1m",
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": ["min", "max", "mean", "lastNotNull"],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
@@ -7640,66 +7639,16 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(node_disk_read_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval])",
+          "expr": "rate(node_disk_io_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*|dm.*\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
-          "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{device}} Read Latency",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "rate(node_disk_write_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval])",
-          "format": "time_series",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{device}} Write Latency",
+          "legendFormat": "{{device}} IO time",
+          "range": true,
           "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "rate(node_disk_io_time_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval])",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{device}} IO Time",
-          "range": true,
-          "refId": "A",
-          "step": 10
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "rate(node_disk_io_time_weighted_seconds_total{instance=~\"$instance:.*\",chain=~\"$chain\",device!~\"md.*\"}[$__rate_interval])",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{device}} IO Weighted",
-          "range": true,
-          "refId": "D"
         }
       ],
-      "title": "Disk Latencies",
+      "title": "Disk CPU Utilization % (raw devices)",
       "type": "timeseries"
     },
     {
@@ -7735,7 +7684,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 4,
         "x": 20,
         "y": 107
@@ -7900,7 +7849,7 @@
         "h": 7,
         "w": 13,
         "x": 0,
-        "y": 116
+        "y": 115
       },
       "id": 353,
       "links": [],
@@ -8107,7 +8056,7 @@
         "h": 8,
         "w": 11,
         "x": 13,
-        "y": 116
+        "y": 115
       },
       "id": 355,
       "options": {
@@ -8217,7 +8166,7 @@
         "h": 9,
         "w": 10,
         "x": 0,
-        "y": 123
+        "y": 122
       },
       "id": 251,
       "links": [],
@@ -8301,7 +8250,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 123
+        "y": 122
       },
       "id": 282,
       "options": {
@@ -8460,7 +8409,7 @@
         "h": 8,
         "w": 11,
         "x": 13,
-        "y": 124
+        "y": 123
       },
       "hideTimeOverride": false,
       "id": 253,
@@ -8541,7 +8490,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 126
+        "y": 125
       },
       "id": 283,
       "options": {
@@ -8614,7 +8563,7 @@
         "h": 3,
         "w": 3,
         "x": 10,
-        "y": 129
+        "y": 128
       },
       "id": 281,
       "options": {
@@ -8802,7 +8751,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -8814,6 +8763,6 @@
   "timezone": "browser",
   "title": "Aptos Validator Monitoring",
   "uid": "bz8kPr673",
-  "version": 268,
+  "version": 270,
   "weekStart": ""
 }
