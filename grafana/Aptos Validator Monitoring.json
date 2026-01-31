@@ -9,8 +9,16 @@
       "pluginName": "Prometheus"
     },
     {
-      "name": "DS_INFINITY",
-      "label": "Infinity",
+      "name": "DS_INFINITY-APTOSSOURCES",
+      "label": "Infinity-AptosSources",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "yesoreyeram-infinity-datasource",
+      "pluginName": "Infinity"
+    },
+    {
+      "name": "DS_INFINITY-BETTERSTACK",
+      "label": "Infinity-BetterStack",
       "description": "",
       "type": "datasource",
       "pluginId": "yesoreyeram-infinity-datasource",
@@ -254,7 +262,7 @@
           "columns": [],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "${DS_INFINITY-APTOSSOURCES}"
           },
           "filters": [],
           "format": "table",
@@ -430,7 +438,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "${DS_INFINITY}"
+        "uid": "${DS_INFINITY-APTOSSOURCES}"
       },
       "description": "",
       "fieldConfig": {
@@ -483,7 +491,7 @@
           "columns": [],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "${DS_INFINITY-APTOSSOURCES}"
           },
           "filters": [],
           "format": "table",
@@ -930,7 +938,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "${DS_INFINITY}"
+        "uid": "${DS_INFINITY-APTOSSOURCES}"
       },
       "description": "",
       "fieldConfig": {
@@ -983,7 +991,7 @@
           "columns": [],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "${DS_INFINITY-APTOSSOURCES}"
           },
           "filters": [],
           "format": "table",
@@ -2235,7 +2243,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "${DS_INFINITY}"
+        "uid": "${DS_INFINITY-BETTERSTACK}"
       },
       "description": "This utilizes a query from BetterStack",
       "fieldConfig": {
@@ -2324,7 +2332,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "${DS_INFINITY-BETTERSTACK}"
           },
           "filters": [],
           "format": "table",
@@ -2336,12 +2344,7 @@
           "url": "https://uptime.betterstack.com/api/v3/incidents",
           "url_options": {
             "data": "",
-            "headers": [
-              {
-                "key": "Authorization",
-                "value": "Bearer 9utppVXhCELp1xpogMbbQ2yR"
-              }
-            ],
+            "headers": [],
             "method": "GET",
             "params": [
               {
@@ -2381,7 +2384,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "${DS_INFINITY}"
+        "uid": "${DS_INFINITY-BETTERSTACK}"
       },
       "description": "",
       "fieldConfig": {
@@ -2485,7 +2488,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "${DS_INFINITY-BETTERSTACK}"
           },
           "filters": [],
           "format": "table",
@@ -2499,12 +2502,7 @@
           "url": "https://uptime.betterstack.com/api/v2/monitors/3135237/response-times",
           "url_options": {
             "data": "",
-            "headers": [
-              {
-                "key": "Authorization",
-                "value": "Bearer 9utppVXhCELp1xpogMbbQ2yR"
-              }
-            ],
+            "headers": [],
             "method": "GET"
           }
         }
@@ -9072,7 +9070,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -9160,7 +9158,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -9326,7 +9324,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -9410,7 +9408,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -9488,7 +9486,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -9653,7 +9651,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -9826,7 +9824,7 @@
         "current": {},
         "datasource": {
           "type": "yesoreyeram-infinity-datasource",
-          "uid": "${DS_INFINITY}"
+          "uid": "${DS_INFINITY-BETTERSTACK}"
         },
         "definition": "Infinity- (legacy) CollectionLookup(mainnet,mainnet.aptoslabs.com,llt,testnet.aptoslabs.com,previewnet_alpha,vfn-previewnet-alpha.aptos.rhinostake.com,previewnet_bravo,vfn-previewnet-alpha.aptos.rhinostake.com,$chain)",
         "hide": 2,
@@ -9903,7 +9901,7 @@
   "timezone": "utc",
   "title": "Aptos Validator Monitoring",
   "uid": "bz8kPr673",
-  "version": 372,
+  "version": 379,
   "weekStart": "",
   "id": null
 }
